@@ -33,8 +33,8 @@ Route::post('tambahjenis', 'JenisController@store')->middleware('jwt.verify');
 Route::put('ubahjenis/{id}', 'JenisController@update')->middleware('jwt.verify');
 Route::delete('hapusjenis/{id}', 'JenisController@destroy')->middleware('jwt.verify');
 
-Route::post('datatransaksi', 'TransaksiController@show')->middleware('jwt.verify');
 Route::post('tambahtransaksi', 'TransaksiController@store')->middleware('jwt.verify');
+Route::post('datatransaksi', 'TransaksiController@show')->middleware('jwt.verify');
 Route::put('ubahtransaksi/{id}', 'TransaksiController@update')->middleware('jwt.verify');
 Route::delete('hapustransaksi/{id}', 'TransaksiController@destroy')->middleware('jwt.verify');
 

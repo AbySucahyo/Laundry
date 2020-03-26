@@ -93,6 +93,7 @@ class TransaksiController extends Controller
             $transaksi = DB::table('transaksi')->join('pelanggan','pelanggan.id','=','transaksi.id_pelanggan')
             ->where('transaksi.tgl_transaksi','>=',$req->tgl_transaksi)
             ->where('transaksi.tgl_selesai','<=',$req->tgl_selesai)
+            ->select('transaksi.*','pelanggan.nama_pelanggan','pelanggan.alamat','pelanggan.telp')
             ->get();
             
             if($transaksi->count() > 0){
